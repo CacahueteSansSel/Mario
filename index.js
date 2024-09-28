@@ -2,12 +2,16 @@ const SLIDES_NAMES = [
     'ferrari',
     'maserati',
     'lamborghini',
+    'fiat',
     'peperoni',
     'catherine',
     'spaghetti',
     'panzani',
+    'ravioli',
     'bugatti',
+    'suisse',
     'buanderie',
+    'pipi',
     'pizza',
     'ravezies',
     'yahoo',
@@ -162,7 +166,7 @@ function generateNewRunArray() {
     for (let slide of slides) {
         if (slide.chance !== undefined && Math.random() >= slide.chance)
             continue
-        if (slide.notAfter !== undefined && slide.notAfter < restartCount)
+        if (slide.notBefore !== undefined && restartCount < slide.notBefore)
             continue
 
         filteredArray.push(slide)

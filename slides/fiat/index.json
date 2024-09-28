@@ -1,0 +1,7 @@
+{
+  "text": "FIAT",
+  "image": "/slides/fiat/fiat.png",
+  "audio": "/slides/fiat/fiat.wav",
+  "chance": 0.2,
+  "notBefore": 2
+}
