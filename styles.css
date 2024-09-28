@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+body {
+    overflow: hidden;
+}
+
+.column {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.big-text-header {
+    color: red;
+    font-size: 5vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: Zilla Slab, serif;
+    font-weight: bold;
+}
+
+.big-image {
+    flex: 1;
+    object-fit: contain;
+    height: calc(100vh - 5vw - 50px);
+}
+
+.clickable {
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.clickable:hover {
+    transform: scale(1.1) perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transition: 0.5s;
+}
+
+.racism-overlay {
+    position: absolute;
+    background: black;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.racism-overlay > p {
+    color: white;
+    flex: 1;
+    text-align: center;
+    vertical-align: center;
+    font-size: 5vw;
+    font-family: Archivo Black, sans-serif;
+    animation: racism-text-animation linear 1s;
+}
+
+@keyframes racism-text-animation {
+    0% {
+        color: black;
+    }
+    30% {
+        color: black;
+    }
+    100% {
+        color: white;
+    }
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.disclaimer-text {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.flag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 100px;
+}
