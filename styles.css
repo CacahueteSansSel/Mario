@@ -87,3 +87,21 @@ body {
     left: 20px;
     height: 100px;
 }
+
+.pc {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    height: 200px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #191919;
+        color: white;
+    }
+
+    .big-text-header {
+        color: #ff5959;
+    }
+}

@@ -84,7 +84,7 @@ async function applySlide(slide) {
     let isSlideShiny = slide.shiny !== undefined && slide.shiny
 
     if (branchCount >= 200) {
-        showRacismSlide()
+        showRacismOverlay()
         return
     }
 
@@ -117,7 +117,7 @@ function stopAllSounds() {
     sounds = []
 }
 
-function showRacismSlide() {
+function showRacismOverlay() {
     if (racismOverlayShown) return
     racismOverlayShown = true;
     branchCount = 0;
@@ -132,12 +132,12 @@ function showRacismSlide() {
     document.getElementById("italian-music").pause()
     document.getElementById("racism-overlay").classList.remove("hidden")
 
-    setTimeout(hideRacismSlide, 2000 + Math.random() * 3462)
+    setTimeout(hideRacismOverlay, 2000 + Math.random() * 3462)
 
     console.log("Shown 'le racisme' overlay")
 }
 
-async function hideRacismSlide() {
+async function hideRacismOverlay() {
     if (!racismOverlayShown) return
     racismOverlayShown = false;
 
@@ -148,6 +148,10 @@ async function hideRacismSlide() {
     if (Math.random() < 0.4) document.getElementById("flag").classList.remove("hidden")
     else if (!document.getElementById("flag").classList.contains("hidden"))
         document.getElementById("flag").classList.add("hidden")
+
+    if (branchCount > 0) document.getElementById("pc").classList.remove("hidden")
+    else if (!document.getElementById("pc").classList.contains("hidden"))
+        document.getElementById("pc").classList.add("hidden")
 
     console.log("Hid 'le racisme' overlay")
 }
@@ -179,7 +183,7 @@ async function nextSlide() {
 
         setTimeout(async () => {
             if (branchCount >= 100) {
-                showRacismSlide()
+                showRacismOverlay()
                 return
             }
             await applySlide(currentRunArray[counter + 1])
