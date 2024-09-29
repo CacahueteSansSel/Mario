@@ -39,7 +39,7 @@ body {
     transition: 0.5s;
 }
 
-.racism-overlay {
+.announcer-overlay {
     position: absolute;
     background: black;
     top: 0;
@@ -50,7 +50,7 @@ body {
     align-items: center;
 }
 
-.racism-overlay > p {
+.announcer-overlay > p {
     color: white;
     flex: 1;
     text-align: center;
@@ -81,17 +81,37 @@ body {
     font-weight: bold;
 }
 
-.flag {
+.meme {
     position: absolute;
+}
+
+.meme-flag {
     top: 20px;
     left: 20px;
     height: 100px;
 }
 
-.pc {
-    position: absolute;
+.meme-pc {
     bottom: 20px;
     left: 20px;
+    height: 200px;
+}
+
+.meme-clap {
+    top: 20px;
+    right: 20px;
+    height: 200px;
+}
+
+.meme-cat {
+    bottom: 20px;
+    right: 20px;
+    height: 200px;
+}
+
+.meme-android {
+    left: 20px;
+    top: calc(50vh - 100px);
     height: 200px;
 }
 
