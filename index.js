@@ -30,7 +30,6 @@ let announcerComments = [
     "Limite, limite",
     "Dans la vie, il faut.",
     "Soyez.",
-    "Evitez de sortir avec votre prof",
     "Mario a changé",
     "Faut verrouiller son PC, en effet",
     "L'état de tes yeux après ça"
