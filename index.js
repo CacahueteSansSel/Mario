@@ -61,16 +61,17 @@ async function getSlide(name) {
 
 async function loadCallback() {
     // load slides from json
+    let names = ""
 
     for (const name of SLIDES_NAMES) {
         let slide = await getSlide(name)
         if (slide === undefined) continue
 
         slides.push(slide);
-        console.log(`loaded slide ${slide.text}`)
+        names += name + ", "
     }
 
-    console.log(slides)
+    console.log(`Loaded ${names}`)
 }
 
 async function start() {
@@ -86,8 +87,6 @@ async function start() {
 }
 
 async function applySlide(slide) {
-    let isSlideShiny = slide.shiny !== undefined && slide.shiny
-
     if (branchCount >= 200) {
         showAnnouncerOverlay()
         return
@@ -97,6 +96,8 @@ async function applySlide(slide) {
         console.warn("slide passed in applySlide() is null, ignoring")
         return
     }
+
+    let isSlideShiny = slide.shiny !== undefined && slide.shiny
 
     document.getElementById("big-text-header").innerText = isSlideShiny ? `✨ ${slide.text} ✨` : slide.text;
     document.getElementById("big-image").src = slide.image;
