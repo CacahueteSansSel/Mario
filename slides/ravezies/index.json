@@ -2,7 +2,7 @@
   "text": "RAVEZIES",
   "image": "/slides/ravezies/ravezies.png",
   "audio": "/slides/ravezies/ravezies.wav",
-  "chance": 0.1,
+  "chance": 0.08,
   "notBefore": 1,
   "shiny": true
 }

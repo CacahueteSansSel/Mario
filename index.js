@@ -3,6 +3,7 @@ const SLIDES_NAMES = [
     'maserati',
     'lamborghini',
     'fiat',
+    'ducati',
     'peperoni',
     'catherine',
     'spaghetti',
@@ -12,9 +13,12 @@ const SLIDES_NAMES = [
     'suisse',
     'buanderie',
     'pipi',
+    'nosferapti',
+    'nosferapti_shiny',
     'pizza',
     'ravezies',
     'yahoo',
+    'zizi'
 ]
 
 let slides = []
@@ -77,6 +81,7 @@ async function start() {
     if (started) return
     started = true
 
+    document.getElementById("version-text").remove()
     document.getElementById("disclaimer-text").remove()
     document.getElementById("italian-music").volume = 0.4;
     document.getElementById("italian-music").play()
@@ -100,6 +105,8 @@ async function applySlide(slide) {
 
     document.getElementById("big-text-header").innerText = isSlideShiny ? `✨ ${slide.text} ✨` : slide.text;
     document.getElementById("big-image").src = slide.image;
+    if (isSlideShiny && document.getElementById("shiny-text").classList.contains("hidden")) document.getElementById("shiny-text").classList.remove("hidden")
+    else document.getElementById("shiny-text").classList.add("hidden")
 
     await playSound(slide.audio)
 }
@@ -173,6 +180,8 @@ function generateNewRunArray() {
             continue
         if (slide.notBefore !== undefined && restartCount < slide.notBefore)
             continue
+        if (slide.without !== undefined && filteredArray.includes(slide.without))
+            continue
 
         filteredArray.push(slide)
     }
@@ -198,4 +207,8 @@ async function nextSlide() {
             await applySlide(currentRunArray[counter + 1])
         }, Math.random() * 3000)
     }
+}
+
+function clickOnWrongMario() {
+    alert("C'est le mauvais mario !")
 }

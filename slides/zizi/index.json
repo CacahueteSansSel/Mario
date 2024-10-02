@@ -1,0 +1,8 @@
+{
+  "text": "ZIZI",
+  "image": "/slides/zizi/zizi.png",
+  "audio": "/slides/zizi/zizi.wav",
+  "chance": 0.1,
+  "notBefore": 1,
+  "shiny": true
+}

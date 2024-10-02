@@ -1,0 +1,8 @@
+{
+  "text": "NOSFERAPTI",
+  "image": "/slides/nosferapti_shiny/nosferapti.png",
+  "audio": "/slides/nosferapti/nosferapti.wav",
+  "chance": 0.1,
+  "without": "nosferapti",
+  "shiny": true
+}
